@@ -10,11 +10,11 @@ from fastapi.middleware.cors import CORSMiddleware
 
 # models.Base.metadata.create_all(bind=engine)
 conf = ConnectionConfig(
-    MAIL_USERNAME="BhagiyarajMahesh",
-    MAIL_PASSWORD ="Bhagy@1398",
-    MAIL_FROM="bhagiyarajmahesh@gmail.com",
+    MAIL_USERNAME="bhag3747@plintron.com",
+    MAIL_PASSWORD ="Ptpl@123",
+    MAIL_FROM="bhagiyaraj.gp@plintron.com",
     MAIL_PORT=587,
-    MAIL_SERVER = "smtp.gmail.com",
+    MAIL_SERVER = "smtp.office365.com",
     MAIL_FROM_NAME="Ding DOng2",
     MAIL_TLS = True,
     MAIL_SSL = False,
@@ -49,10 +49,12 @@ def root():
 @app.post("/mail",status_code=status.HTTP_201_CREATED)
 async def send_email(email:EmailSchema):
     message=MessageSchema(
+
         subject="I am the king of the world",
         recipients=email.dict().get("email"),
         body=Html,
         subtype="html"
+        
     )
     fm=FastMail(conf)
     await fm.send_message(message)
