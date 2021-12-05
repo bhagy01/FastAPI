@@ -1,8 +1,11 @@
-from typing import Optional
+from typing import List, Optional
 from pydantic import BaseModel
 from datetime import datetime
 
 from pydantic.networks import EmailStr 
+
+class EmailSchema(BaseModel):
+  email:List[EmailStr]
 
 class PostBase(BaseModel):
   title: str
