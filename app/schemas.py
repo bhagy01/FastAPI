@@ -5,7 +5,7 @@ from datetime import datetime
 from pydantic.networks import EmailStr 
 
 class EmailSchema(BaseModel):
-  email:List[EmailStr]
+  email:EmailStr
 
 class PostBase(BaseModel):
   title: str

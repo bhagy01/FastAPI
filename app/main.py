@@ -1,28 +1,12 @@
 from fastapi import FastAPI
 from fastapi.exceptions import HTTPException
-from fastapi_mail import FastMail,MessageSchema,ConnectionConfig
 from starlette import status
-from app.schemas import EmailSchema
-from .database import  engine
+# from .database import  engine
 from . import models
 from .routers import post,user,auth,vote
 from fastapi.middleware.cors import CORSMiddleware
 
 # models.Base.metadata.create_all(bind=engine)
-conf = ConnectionConfig(
-    MAIL_USERNAME="bhagiyarajmahesh@gmail.com",
-    MAIL_PASSWORD ="qsbkSjMPCzth52Y3",
-    MAIL_FROM="bhagiyarajmahesh@gmail.com",
-    MAIL_PORT=587,
-    MAIL_SERVER = "smtp-relay.sendinblue.com",
-    MAIL_FROM_NAME="Tesing",
-    MAIL_TLS = True,
-    MAIL_SSL = False,
-)
-
-Html = """ <p>Hi this test mail, Please oombu</p> """
-
-
 
 app = FastAPI()
 
@@ -44,18 +28,4 @@ app.include_router(vote.router)
 
 @app.get("/")
 def root():
-    return {"message" : "Vanthutan Bunda aatitu"}
-
-@app.post("/mail",status_code=status.HTTP_201_CREATED)
-async def send_email(email:EmailSchema):
-    message=MessageSchema(
-
-        subject="I am the king of the world",
-        recipients=email.dict().get("email"),
-        body=Html,
-        subtype="html"
-        
-    )
-    fm=FastMail(conf)
-    await fm.send_message(message)
-    return { "message": "Email sent successfully"}
+    return {"message" : "Sorry !! & Love You! "}
