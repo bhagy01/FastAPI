@@ -10,12 +10,12 @@ from fastapi.middleware.cors import CORSMiddleware
 
 # models.Base.metadata.create_all(bind=engine)
 conf = ConnectionConfig(
-    MAIL_USERNAME="bhag3747@plintron.com",
-    MAIL_PASSWORD ="Ptpl@123",
-    MAIL_FROM="bhagiyaraj.gp@plintron.com",
+    MAIL_USERNAME="bhagiyarajmahesh@gmail.com",
+    MAIL_PASSWORD ="qsbkSjMPCzth52Y3",
+    MAIL_FROM="bhagiyarajmahesh@gmail.com",
     MAIL_PORT=587,
-    MAIL_SERVER = "smtp.office365.com",
-    MAIL_FROM_NAME="Ding DOng2",
+    MAIL_SERVER = "smtp-relay.sendinblue.com",
+    MAIL_FROM_NAME="Tesing",
     MAIL_TLS = True,
     MAIL_SSL = False,
 )
