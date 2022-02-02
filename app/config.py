@@ -1,4 +1,4 @@
-from pydantic import BaseSettings
+from pydantic import BaseSettings, EmailStr
 
 class Settings(BaseSettings):
     DATABASE_NAME: str
@@ -9,6 +9,10 @@ class Settings(BaseSettings):
     SECRET_KEY:str
     ALGORITHM:str
     ACCESS_TOKEN_EXPIRE_MINUTES:int
+    MAIL_USERNAME:EmailStr
+    MAIL_PASSWORD:str
+    MAIL_FROM:EmailStr
+    MAIL_SERVER:str
 
     class Config:
         env_file = ".env"

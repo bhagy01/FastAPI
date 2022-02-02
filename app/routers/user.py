@@ -61,7 +61,18 @@ def verify_user(token:str,db: Session = Depends(get_db)):
   db.commit()
   return user
 
-  
+@router.delete("/{id}",status_code=status.HTTP_204_NO_CONTENT)
+def delete_user(id:int,current_user: int = Depends(oauth.get_current_user),db: Session = Depends(get_db)):
+  user_find=db.query(models.User).filter(models.User.id == id)
+  user = user_find.first()
+  if user is None:
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User doesn't exist")
+  if user.id != current_user.id:
+   raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Not authorised to delete")
+  user_find.delete(synchronize_session=False)
+  db.commit()
+  return Response(status_code=status.HTTP_204_NO_CONTENT)
+
 
 
 

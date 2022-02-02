@@ -1,13 +1,14 @@
 from fastapi_mail import FastMail,MessageSchema,ConnectionConfig
 from app.schemas import EmailSchema
+from .config import settings
 
 conf = ConnectionConfig(
-    MAIL_USERNAME="bhag3747@plintron.com",
-    MAIL_PASSWORD ="Ptpl@123",
-    MAIL_FROM="bhagiyaraj.gp@plintron.com",
+    MAIL_USERNAME=settings.MAIL_USERNAME,
+    MAIL_PASSWORD =settings.MAIL_PASSWORD,
+    MAIL_FROM=settings.MAIL_FROM,
     MAIL_PORT=587,
-    MAIL_SERVER = "smtp.office365.com",
-    MAIL_FROM_NAME="Tesing",
+    MAIL_SERVER =settings.MAIL_SERVER,
+    MAIL_FROM_NAME="USER REGISTRATION",
     MAIL_TLS = True,
     MAIL_SSL = False,
 )
