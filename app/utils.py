@@ -1,6 +1,6 @@
 from datetime import datetime
 from passlib.context import CryptContext
-import pyotp
+from pyotp import pyotp
 # print(pyotp.random_base32())
 #added TOTP-2FA functionality
 # mytimezone= Time Zone: (UTC+05:30)
