@@ -61,7 +61,6 @@ pydantic==1.8.2
 Pygments==2.11.2
 pyotp==2.6.0
 pyparsing==3.0.6
-pypiwin32==223
 python-dateutil==2.8.2
 python-dotenv==0.19.1
 python-jose==3.3.0
