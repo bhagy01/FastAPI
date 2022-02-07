@@ -46,6 +46,7 @@ class UserCreate(BaseModel):
 class LoginUser(BaseModel):
   email:EmailStr
   password: str
+  otp:str
 
 class Token(BaseModel):          #Token send by the client.
   access_token:str
