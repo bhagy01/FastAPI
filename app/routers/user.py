@@ -72,9 +72,4 @@ def delete_user(id:int,current_user: int = Depends(oauth.get_current_user),db: S
   user_find.delete(synchronize_session=False)
   db.commit()
   return Response(status_code=status.HTTP_204_NO_CONTENT)
-
-
-
-
-
   

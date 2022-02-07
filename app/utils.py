@@ -24,7 +24,6 @@ x = pyotp.totp.TOTP(y).provisioning_uri(name="FastAPI", issuer_name="FastAPI app
 img = qrcode.make(x) 
 img.save("nerd.png")
 
-
 pwd_context = CryptContext(schemes=["bcrypt"],deprecated = "auto")
 
 def hash(password:str):
